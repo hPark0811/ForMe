@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
             ViewPager viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(sectionsPagerAdapter);
-            TabLayout tabs = findViewById(R.id.tabs);
-            tabs.setupWithViewPager(viewPager);
-            FloatingActionButton fab = findViewById(R.id.fab);
+            TabLayout tabLayout = findViewById(R.id.tabDots);
+            tabLayout.setupWithViewPager(viewPager, true);
+            /*FloatingActionButton fab = findViewById(R.id.fab);
 
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
-            });
+            })*/;
         } else {
             Context context = getApplicationContext();
             CharSequence text = "Invalid Login!";

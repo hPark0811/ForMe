@@ -1,18 +1,22 @@
 package com.heung.forme.ui.main;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.heung.forme.R;
+import com.heung.forme.custom.recommendation.Recommendation;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -47,11 +51,18 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        final TextView textView = root.findViewById(R.id.section_label);
-        pageViewModel.getText().observe(this, new Observer<String>() {
+        final TextView title = root.findViewById(R.id.title);
+        final ImageView image = root.findViewById(R.id.recImage);
+        final TextView description = root.findViewById(R.id.description);
+
+        pageViewModel.getmRecommendation().observe(this, new Observer<Recommendation>() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(@Nullable Recommendation rec) {
+                title.setText(rec.getType());
+                image.setImageResource(rec.getDrawableImage());
+                String descriptionAggregate = String.join("\n\n ", rec.getDescription());
+                description.setText(descriptionAggregate);
             }
         });
         return root;
