@@ -2,21 +2,17 @@ package com.heung.forme;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.viewpager.widget.ViewPager;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
+import com.google.android.material.tabs.TabLayout;
 import com.heung.forme.ui.main.SectionsPagerAdapter;
+
+import java.util.concurrent.TimeUnit;
+
+import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (isCorrect){
             setContentView(R.layout.activity_main);
+            findViewById(R.id.view_pager).setAlpha(0f);
+            newSingleThreadScheduledExecutor().schedule(task, 3, TimeUnit.SECONDS);
             SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
             ViewPager viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(sectionsPagerAdapter);
@@ -55,4 +53,12 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         }
     }
+
+    Runnable task = new Runnable() {
+        public void run() {
+            findViewById(R.id.progressBar).setAlpha(0f);
+            findViewById(R.id.loadingText).setAlpha(0f);
+            findViewById(R.id.view_pager).setAlpha(1f);
+        }
+    };
 }

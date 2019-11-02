@@ -41,6 +41,25 @@
             app:tabMode="fixed" />
     </androidx.viewpager.widget.ViewPager>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="130dp"
+        android:indeterminateDrawable="@drawable/progress_bar" />
+
+    <TextView
+        android:id="@+id/loadingText"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="130dp"
+        android:gravity="center"
+        android:text="Loading..."
+        android:textSize="24sp" />
+
+
     <!--com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
