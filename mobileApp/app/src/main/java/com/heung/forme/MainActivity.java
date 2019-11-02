@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         /*@TODO: Add login verification*/
 
         if (isCorrect){
-            setContentView(R.layout.activity_main);
-            SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+            setContentView(R.layout.activity_maps);
+           /* SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
             ViewPager viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(sectionsPagerAdapter);
             TabLayout tabLayout = findViewById(R.id.tabDots);
-            tabLayout.setupWithViewPager(viewPager, true);
+            tabLayout.setupWithViewPager(viewPager, true);*/
             /*FloatingActionButton fab = findViewById(R.id.fab);
 
             fab.setOnClickListener(new View.OnClickListener() {
