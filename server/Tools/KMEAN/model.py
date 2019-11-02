@@ -182,10 +182,11 @@ def graph(model, X: list) -> None:
 	plt.close()
 
 
+"""
 if __name__ == '__main__':
 	silhouette(2, 30)
 	kmean_model, train_set, test_set = model(5)
 	graph(kmean_model, test_set)
-
+"""
 
 
