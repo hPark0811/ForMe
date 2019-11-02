@@ -11,7 +11,7 @@ if __name__=='__main__':
 
     c = km.predict([get_customer_array(sys.argv[1])])[0]
     
-    print(str("{creditCard: 'cashback_infinite', bankAccount: 'asdfasdfasfd'}"))
+    print(str("{'creditCard': 'cashback_infinite', 'bankAccount': 'asdfasdfasfd'}"))
     """
     argv 0 = __init__.py
     argv 1 = customer id
