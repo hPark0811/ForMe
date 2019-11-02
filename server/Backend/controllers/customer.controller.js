@@ -5,6 +5,18 @@ exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
+exports.recommendations = function(req, res){
+    console.log('Queried customer ID_recommendation: '+req.params.id);
+
+    const {spawn} = require('child_process');
+    const pyProg = spawn('python', ['../Tools/KMEAN/__init__.py', req.params.id]);
+
+    pyProg.stdout.on('data', function(data){
+        console.log("PY DATA: \n\n"+data);   //print on console running server.js
+        res.send(data);   //output on request origins (POSTMAN)
+    })
+};
+
 exports.location = function (req, res) {
     console.log('Queried customer ID_location: '+req.params.id);
     // res.send("Received query id of: "+req.params.id)
@@ -16,19 +28,7 @@ exports.location = function (req, res) {
         console.log("PY DATA: \n\n"+data.toString());   //print on console running server.js
         res.send(data);   //output on request origins (POSTMAN)
     })
-}
-
-exports.recommendations = fucntion (req, res) {
-    console.log('Queried customer ID_recommendation: '+req.params.id);
-
-    const {spawn} = require('child_process');
-    const pyProg = spawn('python', ['../Tools/__init__.py', req.params.id]);
-
-    pyProg.stdout.on('data', function(data){
-        console.log("PY DATA: \n\n"+data.toString());   //print on console running server.js
-        res.send(data);   //output on request origins (POSTMAN)
-    })
-}
+};
 
 // exports.create = function (req, res) {
 //     let item = new Item({
