@@ -1,0 +1,21 @@
+<vector android:height="143.1dp" android:viewportHeight="90"
+    android:viewportWidth="200" android:width="318dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#fff" android:pathData="M151.83,24.46a11.31,11.31 0,0 1,-11 11.31V74.38A5.79,5.79 0,0 1,135 80.16H50.3a5.8,5.8 0,0 1,-5.78 -5.78V24.63a5.8,5.8 0,0 1,5.78 -5.78h55.8a11.65,11.65 0,0 1,1.83 -2.4,11.32 11.32,0 0,1 16,0l4.27,4.28 4.28,-4.28a11.33,11.33 0,0 1,19.33 8Z"/>
+    <path android:fillColor="#00b624" android:pathData="M55.57,29.92L55.57,49.25L77.19,49.25L77.19,29.92ZM69.77,45.07h-5L64.77,36h2.53v7.46h2.43c1.68,0 2.39,-1.16 2.39,-4.16s-0.8,-3.88 -2.51,-3.88L64,35.42v9.65h-2.5L61.5,35.42L57.84,35.42L57.84,33.81L70.35,33.81c3,0 4.45,1.56 4.45,5.47C74.8,44.44 72.66,45.07 69.77,45.07Z"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M139.3,34.81V74.38A4.3,4.3 0,0 1,135 78.66H50.3A4.3,4.3 0,0 1,46 74.38V24.63a4.3,4.3 0,0 1,4.28 -4.28h55.31"
+        android:strokeColor="#1a5336" android:strokeLineCap="square" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M55.57,66.41L68.93,66.41"
+        android:strokeColor="#1a5336" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M75.55,66.41L89.17,66.41"
+        android:strokeColor="#1a5336" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M95.92,66.41L109.55,66.41"
+        android:strokeColor="#1a5336" android:strokeWidth="3"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M116.3,66.41L129.92,66.41"
+        android:strokeColor="#1a5336" android:strokeWidth="3"/>
+    <path android:fillColor="#1a5336" android:pathData="M115.94,35.79a11.33,11.33 0,1 1,8 -19.34l4.27,4.27 4.28,-4.27a11.33,11.33 0,1 1,0 16l-4.28,-4.27L124,32.47A11.26,11.26 0,0 1,115.94 35.79ZM115.94,16.13a8.33,8.33 0,1 0,5.89 14.22l5.88,-5.89 -5.88,-5.89A8.31,8.31 0,0 0,115.94 16.13ZM128.73,24.46 L134.62,30.35a8.33,8.33 0,1 0,0 -11.78Z"/>
+</vector>
