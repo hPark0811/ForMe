@@ -12,7 +12,18 @@ public class PageViewModel extends ViewModel {
     private LiveData<String> mText = Transformations.map(mIndex, new Function<Integer, String>() {
         @Override
         public String apply(Integer input) {
-            return "Hello world from section: " + input;
+            String returnText;
+            switch (input){
+                case 1:
+                    returnText = "11111111111111111111";
+                    break;
+                case 2:
+                    returnText = "22222222222222222222";
+                    break;
+                default:
+                    returnText = "WHO A U";
+            }
+            return returnText;
         }
     });
 
@@ -23,4 +34,6 @@ public class PageViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
+
 }
