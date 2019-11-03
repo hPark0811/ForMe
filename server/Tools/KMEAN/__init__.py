@@ -30,6 +30,8 @@ def get_estimate(n:int):
     """
     cards:str
     account:str
+
+    # mapping based on analyze of data using the KMeans. * graph/
     if n == 0:
         cards = "reward_visa"
         account = "chequing_account"
@@ -50,6 +52,7 @@ def get_estimate(n:int):
 
 
 if __name__ == '__main__':
+    # writes in deom.json - customerId:account mapping    
     with open('customer.json','r') as customer_file:
         customer_jsons = json.load(customer_file)
         with open('model.pkl', 'rb') as model_file:
