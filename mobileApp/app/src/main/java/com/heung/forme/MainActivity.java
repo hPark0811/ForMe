@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void openTdCreditCardURL(View view){
-        Uri uri = Uri.parse("http://www.google.com");
+        Uri uri = Uri.parse("https://www.td.com/ca/en/personal-banking/products/credit-cards/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
