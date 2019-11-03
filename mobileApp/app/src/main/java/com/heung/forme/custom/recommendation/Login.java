@@ -6,10 +6,10 @@ import java.util.Map;
 public class Login {
     static Map<String, String> usernameToID = new HashMap<String, String>(){
         {
-            put("hpark0811", "asdfasdfasdfasdf");
-            put("yjeon27", "fdsafdsafdsafdsa");
-            put("jhwan7", "fdsaasdffdsaasdf");
-            put("songsong", "sdfdsfsfdsdfs");
+            put("hpark0811", "4806f34e-93a6-4e2f-9e41-5ee9f0d24f14");
+            put("yjeon27", "f2d298fd-8c7c-4c10-83a4-967328686cc0");
+            put("jhwan7", "f2d298fd-8c7c-4c10-83a4-967328686cc0");
+            put("songsong", "f2d298fd-8c7c-4c10-83a4-967328686cc0");
         }
     };
 

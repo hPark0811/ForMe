@@ -2,6 +2,7 @@ package com.heung.forme;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,15 +19,16 @@ import java.util.concurrent.TimeUnit;
 import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_main);
     }
 
     public void login(View view){
-        boolean isCorrect = true;
         String username = String.valueOf(((EditText) findViewById(R.id.username)).getText());
         String pw = String.valueOf(((EditText) findViewById(R.id.password)).getText());
 
