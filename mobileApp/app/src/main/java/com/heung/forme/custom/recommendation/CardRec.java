@@ -13,7 +13,7 @@ public class CardRec implements Recommendation {
     public CardRec(String type){
         description = new ArrayList<>();
         switch (type){
-            case "aeroplan_infinite":
+            case "aeroplane_visa_infinite":
                 this.type = "TD Aeroplan Visa Infinite Card";
                 drawableImage = R.drawable.aeroplan_visa_infinite_card;
                 description.add("Earn up to 40,000 Aeroplan Miles1 & a 1st year Annual Fee Rebate1 for the Primary Cardholder. Conditions Apply. Offer ends December 1, 2019.");
@@ -31,7 +31,7 @@ public class CardRec implements Recommendation {
                 break;
             case "cashback":
                 this.type = "TD Cash Back Visa Card";
-                drawableImage = R.drawable.cash_back_infinite_visa_card;
+                drawableImage = R.drawable.cash_back_visa;
                 description.add("Earn Cash Back Dollars. Redeem them to help pay down your Account balance.");
                 description.add("$0 Annual Fee");
                 description.add("19.99% Interest: Purchasess");
@@ -39,17 +39,17 @@ public class CardRec implements Recommendation {
                 break;
             case "rewards":
                 this.type = "TD Rewards Visa Card";
-                drawableImage = R.drawable.cash_back_infinite_visa_card;
+                drawableImage = R.drawable.td_rewards_visa_card;
                 description.add("Earn Cash Back Dollars. Redeem them to help pay down your Account balance.");
                 description.add("$0 Annual Fee");
                 description.add("19.99% Interest: Purchasess");
                 description.add("22.99% Interest: Cash Advances");
                 break;
             default:
-                this.type = "TD Business Travel Visa Card";
-                drawableImage = R.drawable.cash_back_infinite_visa_card;
-                description.add("Welcome Bonus: 30,000 TD rewards Points upon first purchase");
-                description.add("$149 Annual Fee");
+                this.type = "TD Cash Back Visa Card";
+                drawableImage = R.drawable.cash_back_visa;
+                description.add("Earn Cash Back Dollars. Redeem them to help pay down your Account balance.");
+                description.add("$0 Annual Fee");
                 description.add("19.99% Interest: Purchasess");
                 description.add("22.99% Interest: Cash Advances");
                 break;
