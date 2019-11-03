@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             TabLayout tabLayout = findViewById(R.id.tabDots);
             tabLayout.setupWithViewPager(viewPager, true);
 
+
             FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
