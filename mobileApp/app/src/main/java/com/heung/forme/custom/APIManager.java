@@ -13,14 +13,15 @@ import java.util.Map;
 
 public class APIManager {
 
-    static final String URL = "http://54.174.201.99:8080/customers/";
+    static final String URL = "http://54.165.197.19:8080/customers/";
+
 
     public static Map<String, String> getCustomerRecommendation(String customerID) throws Exception {
         StringBuilder result = new StringBuilder();
         URL url = new URL(URL + customerID + "/recommendations");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setConnectTimeout(2000);
+        con.setConnectTimeout(1000);
         InputStream in = new BufferedInputStream(con.getInputStream());
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));

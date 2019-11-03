@@ -60,17 +60,6 @@
                 android:textSize="25sp"
                 app:fontFamily="@font/archivo_black" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:background="@drawable/button_light_template"
-                android:text="@string/branch"
-                android:textColor="#FFFFFFFF"
-                android:textSize="18sp" />
-
-
         </LinearLayout>
     </ScrollView>
 
