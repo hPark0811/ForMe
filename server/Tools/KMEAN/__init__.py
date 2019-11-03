@@ -1,18 +1,34 @@
 import sys
 
-from model import model
 from td_davinci_api_processor import get_customer_array
+import pickle
+import numpy as np
 
-if __name__=='__main__':
-    # kmean_model = model()
-    #print(sys.argv[1])
-    km, train_set, test_set = model()
-    #    print(km.predict([get_customer_array(sys.argv[1])])[0])
+import matplotlib.pyplot as plt
 
-    c = km.predict([get_customer_array(sys.argv[1])])[0]
-    
-    print(str("{'creditCard': 'cashback_infinite', 'bankAccount': 'asdfasdfasfd'}"))
-    """
-    argv 0 = __init__.py
-    argv 1 = customer id
-    """
+
+def return_value(id, km):
+    return km.predict([get_customer_array(id)])[0]
+
+
+PARAMS = [
+    'age',
+    'income',
+    'food and dining',
+    'shopping',
+    'home',
+    'entertainment',
+    'fees and charges',
+    'food and dining count',
+    'shopping count',
+    'home count',
+    'entertainment count',
+    'fees and charges count'
+]
+
+if __name__ == '__main__':
+
+    with open('model.pkl', 'rb') as file:
+        model = pickle.load(file)
+        c = model.predict([get_customer_array(sys.argv[1])])[0]
+        print(c)
