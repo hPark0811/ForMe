@@ -25,6 +25,10 @@ PARAMS = [
 ]
 
 def get_estimate(n:int):
+    """
+        * rebuilding of model.py will reset the mapping of color to cards and account
+        * rebuilding of model.py will need re-analyze of the data from graph, and re-implementation of get_estimate
+    """
     cards:str
     account:str
     if n == 0:
@@ -54,11 +58,7 @@ if __name__ == '__main__':
         with open('model.pkl', 'rb') as model_file:
             model = pickle.load(model_file)
             dic = {}
-            n = 0
             for id in tqdm(customer_jsons.keys()):
-                n+=1
-                if n ==10:
-                    break
                 dic[id] = get_estimate(model.predict([get_customer_array(id)])[0])           
             with open('demo.json', 'w') as demo_file:
                json.dump(dic, demo_file, indent=2)
