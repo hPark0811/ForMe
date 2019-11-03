@@ -1,6 +1,6 @@
 """
-	td_davinci_api_processor.py make REST calls using TD Davinci Api to retrieve required data for training and testing sets
-	as well as extracting required information from the retrieved data. Preprocessed data is saved in customer.json
+td_davinci_api_processor.py make REST calls using TD Davinci Api to retrieve required data for training 
+and testing sets as well as extracting required information from the retrieved data. Preprocessed data is saved in customer.json
 """
 import requests
 import json

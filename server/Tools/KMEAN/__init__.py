@@ -32,6 +32,7 @@ def get_estimate(n:int):
     account:str
 
     # mapping based on analyze of data using the KMeans. * graph/
+    # COLOURS = ["red", "green", "blue", "yellow", "black"]
     if n == 0:
         cards = "reward_visa"
         account = "chequing_account"
@@ -40,13 +41,13 @@ def get_estimate(n:int):
         account = "saving_account"
     elif n == 2:
         cards = "cashback"
-        account = "chequeing_account"
+        account = "saving_account"
     elif n == 3:
         cards = "cashback"
         account = "chequing_account"
     elif n == 4:
         cards = "aeroplane_visa_infinite"
-        account = "chequeing_account"
+        account = "chequing_account"
 
     return [cards, account]
 

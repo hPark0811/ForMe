@@ -1,11 +1,11 @@
 """
-	model.py creates machine learning model with KMean algorithms and evaluates the model using silhouette method. 
-	The model takes an array PARAMS = ['age','income','food and dining','shopping','home','entertainment','fees and charges','food and dining count','shopping count','home count','entertainment count','fees and charges count']
-	And return a integer from 0-4 . The integer represents distinct class - distinct type of customer.
+model.py creates machine learning model with KMean algorithms and evaluates the model using silhouette method. 
+The model takes an array PARAMS = ['age','income','food and dining','shopping','home','entertainment','fees and charges','food and dining count','shopping count','home count','entertainment count','fees and charges count']
+And return a integer from 0-4 . The integer represents distinct class - distinct type of customer.
 	
-	This file creates model.pkl which is extracted from the trained model, 3-d graphs of the classification in graph directory, silhouette scores on different number of K.
+This file creates model.pkl which is extracted from the trained model, 3-d graphs of the classification in graph directory, silhouette scores on different number of K.
 
-	Warning - recreating the model will reset the mapping of the class integers to actual class. The file is kept within the project, for the demonstration purpose.
+Warning - recreating the model will reset the mapping of the class integers to actual class. The file is kept within the project, for the demonstration purpose.
 """
 import json
 import numpy as np
