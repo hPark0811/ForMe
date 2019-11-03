@@ -8,7 +8,6 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 
-
 PARAMS = [
     'age',
     'income',
@@ -49,10 +48,8 @@ def get_estimate(n:int):
 
     return [cards, account]
 
-if __name__ == '__main__':
 
-    # run td_processor
-    # run model.py -> new pickle
+if __name__ == '__main__':
     with open('customer.json','r') as customer_file:
         customer_jsons = json.load(customer_file)
         with open('model.pkl', 'rb') as model_file:
@@ -62,8 +59,6 @@ if __name__ == '__main__':
                 dic[id] = get_estimate(model.predict([get_customer_array(id)])[0])           
             with open('demo.json', 'w') as demo_file:
                json.dump(dic, demo_file, indent=2)
-
-# COLOURS = ["red", "green", "blue", "yellow", "black"]
 
 
         
