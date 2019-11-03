@@ -3,11 +3,14 @@ package com.heung.forme;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.material.tabs.TabLayout;
+import com.heung.forme.custom.recommendation.Login;
 import com.heung.forme.ui.main.SectionsPagerAdapter;
 
 import java.util.concurrent.TimeUnit;
@@ -24,27 +27,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view){
         boolean isCorrect = true;
+        String username = String.valueOf(((EditText) findViewById(R.id.username)).getText());
+        String pw = String.valueOf(((EditText) findViewById(R.id.password)).getText());
 
-        /*@TODO: Add login verification*/
-
-        if (isCorrect){
+        if (Login.checkLogin(username, pw)){
             setContentView(R.layout.activity_main);
             findViewById(R.id.view_pager).setAlpha(0f);
             newSingleThreadScheduledExecutor().schedule(task, 3, TimeUnit.SECONDS);
-            SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+            SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(Login.getUserID(username), getSupportFragmentManager());
             ViewPager viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(sectionsPagerAdapter);
             TabLayout tabLayout = findViewById(R.id.tabDots);
             tabLayout.setupWithViewPager(viewPager, true);
-            /*FloatingActionButton fab = findViewById(R.id.fab);
-
-            fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                }
-            })*/;
         } else {
             Context context = getApplicationContext();
             CharSequence text = "Invalid Login!";
@@ -54,11 +48,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    Runnable task = new Runnable() {
-        public void run() {
-            findViewById(R.id.progressBar).setAlpha(0f);
-            findViewById(R.id.loadingText).setAlpha(0f);
-            findViewById(R.id.view_pager).setAlpha(1f);
-        }
+    Runnable task = () -> {
+        findViewById(R.id.progressBar).setAlpha(0f);
+        findViewById(R.id.loadingText).setAlpha(0f);
+        findViewById(R.id.view_pager).setAlpha(1f);
     };
 }
