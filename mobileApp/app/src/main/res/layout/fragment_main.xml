@@ -36,18 +36,39 @@
 
             <TextView
                 android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="236dp"
+                android:layout_width="340dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="20dp"
                 android:text="" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:layout_marginBottom="30dp"
+                android:id="@+id/infobutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:text="Would you like to know more?"
-                android:textColor="#3BAE28" />
+                android:onClick="openTdCreditCardURL"
+                android:text="@string/MoreInfo"
+                android:textColor="#3BAE28"
+                tools:ignore="OnClick" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Apply"
+                android:textSize="25sp"
+                app:fontFamily="@font/archivo_black" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="#3BAE28"
+                android:text="@string/branch"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18sp" />
+
 
         </LinearLayout>
     </ScrollView>
