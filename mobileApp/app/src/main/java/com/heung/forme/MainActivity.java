@@ -6,18 +6,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.heung.forme.custom.recommendation.Login;
 import com.heung.forme.ui.main.SectionsPagerAdapter;
-
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,6 +45,13 @@ public class MainActivity extends AppCompatActivity {
             viewPager.setAdapter(sectionsPagerAdapter);
             TabLayout tabLayout = findViewById(R.id.tabDots);
             tabLayout.setupWithViewPager(viewPager, true);
+
+
+            FloatingActionButton fab = findViewById(R.id.fab);
+            fab.setOnClickListener(view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+            );
+
         } else {
             Context context = getApplicationContext();
             CharSequence text = "Invalid Login!";
