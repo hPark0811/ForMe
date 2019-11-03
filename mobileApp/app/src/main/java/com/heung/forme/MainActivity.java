@@ -1,11 +1,15 @@
 package com.heung.forme;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.view.View.OnClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -13,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.heung.forme.custom.recommendation.Login;
 import com.heung.forme.ui.main.SectionsPagerAdapter;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -55,4 +60,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.loadingText).setAlpha(0f);
         findViewById(R.id.view_pager).setAlpha(1f);
     };
+
+    public void openTdCreditCardURL(View view){
+        Uri uri = Uri.parse("http://www.google.com");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
 }
