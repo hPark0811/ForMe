@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/td_canada_logo" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/username"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
@@ -28,19 +28,21 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Username"
+        android:textColorHint="#FFFFFF"
         android:textAllCaps="true"
         android:textColor="#FFFFFF" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/password"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="werwerwer"
+        android:hint="Password"
+        android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF" />
 
     <Button
