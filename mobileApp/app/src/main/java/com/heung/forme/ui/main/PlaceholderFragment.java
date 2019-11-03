@@ -24,16 +24,14 @@ import com.heung.forme.custom.recommendation.Recommendation;
 public class PlaceholderFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    static String userID;
 
     private PageViewModel pageViewModel;
 
-    public static PlaceholderFragment newInstance(int index, String userID) {
+    public static PlaceholderFragment newInstance(int index) {
         PlaceholderFragment fragment = new PlaceholderFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(ARG_SECTION_NUMBER, index);
         fragment.setArguments(bundle);
-        PlaceholderFragment.userID = userID;
         return fragment;
     }
 
@@ -45,7 +43,6 @@ public class PlaceholderFragment extends Fragment {
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
         }
-        pageViewModel.setUserID(PlaceholderFragment.userID);
         pageViewModel.setIndex(index);
     }
 
