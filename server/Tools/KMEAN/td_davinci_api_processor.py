@@ -132,5 +132,5 @@ def create_traing_data(n:int=1000):
 		json.dump(customers_dict, customer_file, indent=2)
 
 if __name__ == '__main__':
-    print(get_customer_array("ce16ef42-a4e8-41e0-8f45-1ccf3079b659"))
-    create_traing_data(100)
+    # print(get_customer_array("ce16ef42-a4e8-41e0-8f45-1ccf3079b659"))
+    create_traing_data()

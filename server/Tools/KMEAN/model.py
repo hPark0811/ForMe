@@ -79,7 +79,7 @@ def silhouette(low: int = 2, high: int = 10):
 		score = silhouette_score(test_set, prediction)
 		silhouette_scores.append(score)
 
-		# print("silhouette_scores on k = "+str(n_clusters)+" "+str(score))
+		print("silhouette_scores on k = "+str(n_clusters)+" "+str(score))
 
 	# plot score over K
 	x = np.linspace(low, high, high-low)
@@ -183,8 +183,9 @@ def graph(model, X: list) -> None:
 
 
 if __name__ == '__main__':
-	# silhouette(2, 30)
 	km, train_set, test_set = model(5)
+	silhouette(2, 10)
 	with open('model.pkl', 'wb') as file:
 		pickle.dump(km, file)
-	graph(km, train_set)
+	graph(km, test_set)
+	print("Successfully Updated")
