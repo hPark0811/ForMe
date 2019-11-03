@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from mpl_toolkits.mplot3d import Axes3D
+import pickle
 
 
 def normalize(x):
@@ -15,8 +16,7 @@ def normalize(x):
 	for x_i in x:
 		n.append((x_i-x_min)/(x_max-x_min))
 	return n
-
-
+	
 def load_data(path: str = "customer.json") -> np.array:
 	# load customer information from customer.json
 	with open(path) as customer_file:
@@ -79,7 +79,7 @@ def silhouette(low: int = 2, high: int = 10):
 		score = silhouette_score(test_set, prediction)
 		silhouette_scores.append(score)
 
-		# print("silhouette_scores on k = "+str(n_clusters)+" "+str(score))
+		print("silhouette_scores on k = "+str(n_clusters)+" "+str(score))
 
 	# plot score over K
 	x = np.linspace(low, high, high-low)
@@ -182,11 +182,10 @@ def graph(model, X: list) -> None:
 	plt.close()
 
 
-"""
 if __name__ == '__main__':
-	silhouette(2, 30)
-	kmean_model, train_set, test_set = model(5)
-	graph(kmean_model, test_set)
-"""
-
-
+	km, train_set, test_set = model(5)
+	silhouette(2, 10)
+	with open('model.pkl', 'wb') as file:
+		pickle.dump(km, file)
+	graph(km, test_set)
+	print("Successfully Updated")
