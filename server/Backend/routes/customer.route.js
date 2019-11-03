@@ -12,6 +12,7 @@ router.use(function(req, res, next){
 
 router.get('/test', controller.test)
         .get('/:id/location', controller.location)
-        .get('/:id/recommendations', controller.recommendations);
+        .get('/:id/recommendations', controller.recommendations)
+        .post('/create', controller.create);
 
 module.exports = router;

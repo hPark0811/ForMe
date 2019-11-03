@@ -1,3 +1,5 @@
+const Customer = require('../models/customer.model');
+
 exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
@@ -42,4 +44,20 @@ exports.location = function (req, res) {
         console.log("PY DATA: \n\n"+data.toString());    //print on console running server.js
         res.send(data);                                  //output on request origins (POSTMAN)
     })
+};
+
+
+exports.create = function (req, res) {
+    let customer = new Customer({
+        customerID: req.body.customerID,
+        creditCard: req.body.creditCard,
+        bankAccount: req.body.bankAccount
+    });
+
+    customer.save(function(err) {
+        if(err){
+            return next(err);
+        }
+        res.send("Customer Created Successfully");
+    });
 };

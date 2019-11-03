@@ -25,10 +25,13 @@ var mappedList = JSON.parse(fs.readFileSync("../Tools/KMEAN/demo.JSON"));
 
 console.log(mappedList);
 console.log(Object.keys(mappedList).length);
-
+// console.log(db.collections);
 for(var i=0; i<Object.keys(mappedList).length; i++){
     var tempKey = Object.keys(mappedList)[i];
     var tempValue = Object.values(mappedList)[i];
+
+    console.log(tempKey+", "+tempValue);
+    // db.collection('customers').insertOne({customerID: tempKey, creditCard: tempValue[0], bankAccount: tempValue[1]})
     if(!db.collection('customers').find({customerID: tempKey})){
         db.collection('customers').insertOne({customerID: tempKey, creditCard: tempValue[0], bankAccount: tempValue[1]})
     }else{
