@@ -19,6 +19,8 @@ public class APIManager {
         StringBuilder result = new StringBuilder();
         URL url = new URL(URL + customerID + "/recommendations");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        con.setConnectTimeout(2000);
         InputStream in = new BufferedInputStream(con.getInputStream());
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
