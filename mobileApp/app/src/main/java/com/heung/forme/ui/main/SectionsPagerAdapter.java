@@ -24,7 +24,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             System.out.println("RESTCALL MADE!");
         } catch (Exception e) {
             PageViewModel.cardType = "cashback_infinite";
-            PageViewModel.bankType = "chqueing_acc";
+            PageViewModel.bankType = "chequing";
             System.out.println("RESTCALL ERROR!: " + e.getMessage());
         }
     }

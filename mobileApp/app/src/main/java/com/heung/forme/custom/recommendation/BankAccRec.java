@@ -13,16 +13,22 @@ public class BankAccRec implements Recommendation {
     public BankAccRec(String type){
         description = new ArrayList<>();
         switch (type){
-            case "asdfasdfasfd":
+            case "chequing":
                 this.type = "TD Unlimited Chequing Account";
                 drawableImage = R.drawable.unlimited_chequing_acc;
-                description.add("default!");
-                //add descriptions too
+                description.add("Peace of mind that comes with unlimited transactions");
+                description.add("Unlimited transactions");
+                description.add("No TD fee on any ATM in Canada");
+                description.add("Free  Interac e-Transfer® transactions");
+                description.add("$15.95 Monthly Fee");
                 break;
             case "Savings":
                 this.type = "TD Everyday Savings Account Card";
                 drawableImage = R.drawable.everyday_savings_acc;
-                description.add("default");
+                description.add("Ideal if you’re starting to save or want frequent access to your funds");
+                description.add("$0 Monthly Fee");
+                description.add("Every dollar earns interest calculated daily");
+                description.add("1 transaction1 per month");
                 break;
             default:
                 description.add("default");
