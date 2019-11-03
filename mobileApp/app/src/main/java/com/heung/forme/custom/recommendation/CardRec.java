@@ -16,16 +16,42 @@ public class CardRec implements Recommendation {
             case "aeroplan_infinite":
                 this.type = "TD Aeroplan Visa Infinite Card";
                 drawableImage = R.drawable.aeroplan_visa_infinite_card;
-                description.add("AEROPLAN");
-                //add descriptions too
+                description.add("Earn up to 40,000 Aeroplan Miles1 & a 1st year Annual Fee Rebate1 for the Primary Cardholder. Conditions Apply. Offer ends December 1, 2019.");
+                description.add("$120 Annual Fee");
+                description.add("19.99% Interest: Purchases");
+                description.add("22.99% Interest: Cash Advances");
                 break;
             case "cashback_infinite":
                 this.type = "TD Cash Back Visa Infinite Card";
                 drawableImage = R.drawable.cash_back_infinite_visa_card;
-                description.add("AEROPLAN");
+                description.add("Earn 10% Cash Back on all Purchases for the first 3 months5, up to a total spend of $2,000. Plus, no annual fees in the first year. Conditions apply. Offer ends December 1, 2019.");
+                description.add("$120 Annual Fee");
+                description.add("20.99% Interest: Purchases");
+                description.add("22.99% Interest: Cash Advances");
+                break;
+            case "cashback":
+                this.type = "TD Cash Back Visa Card";
+                drawableImage = R.drawable.cash_back_infinite_visa_card;
+                description.add("Earn Cash Back Dollars. Redeem them to help pay down your Account balance.");
+                description.add("$0 Annual Fee");
+                description.add("19.99% Interest: Purchasess");
+                description.add("22.99% Interest: Cash Advances");
+                break;
+            case "rewards":
+                this.type = "TD Rewards Visa Card";
+                drawableImage = R.drawable.cash_back_infinite_visa_card;
+                description.add("Earn Cash Back Dollars. Redeem them to help pay down your Account balance.");
+                description.add("$0 Annual Fee");
+                description.add("19.99% Interest: Purchasess");
+                description.add("22.99% Interest: Cash Advances");
                 break;
             default:
-                description.add("AEROPLAN");
+                this.type = "TD Business Travel Visa Card";
+                drawableImage = R.drawable.cash_back_infinite_visa_card;
+                description.add("Welcome Bonus: 30,000 TD rewards Points upon first purchase");
+                description.add("$149 Annual Fee");
+                description.add("19.99% Interest: Purchasess");
+                description.add("22.99% Interest: Cash Advances");
                 break;
         }
     }
