@@ -13,14 +13,14 @@ import java.util.Map;
 
 public class APIManager {
 
-    static final String URL = "http://54.174.201.99:8080/customers/";
+    static final String URL = "http://54.165.197.19:8080/customers/";
 
     public static Map<String, String> getCustomerRecommendation(String customerID) throws Exception {
         StringBuilder result = new StringBuilder();
         URL url = new URL(URL + customerID + "/recommendations");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
-        con.setConnectTimeout(2000);
+        con.setConnectTimeout(1000);
         InputStream in = new BufferedInputStream(con.getInputStream());
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -30,8 +30,6 @@ public class APIManager {
             result.append(line);
         }
         JSONObject jsonObject = new JSONObject(String.valueOf(result));
-        jsonObject.get("creditCard");
-        jsonObject.get("bankAccount");
         Map<String, String> recMap = new HashMap<>();
 
         recMap.put("creditCard", jsonObject.getString("creditCard"));
@@ -40,11 +38,12 @@ public class APIManager {
         return recMap;
     }
 
-    public static Map<String, String> getClosestBranch(String customerID) throws Exception {
+    public static Map<String, Double> getClosestBranch(String customerID) throws Exception {
         StringBuilder result = new StringBuilder();
-        URL url = new URL(URL);
+        URL url = new URL(URL + customerID + "/location");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
+        con.setConnectTimeout(1000);
         InputStream in = new BufferedInputStream(con.getInputStream());
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -54,13 +53,12 @@ public class APIManager {
             result.append(line);
         }
         JSONObject jsonObject = new JSONObject(String.valueOf(result));
-        jsonObject.get("longitude");
-        jsonObject.get("latitude");
-        Map<String, String> recMap = new HashMap<>();
+        Map<String, Double> recMap = new HashMap<>();
 
-        recMap.put("longitude", jsonObject.getString("longitude"));
-        recMap.put("latitude", jsonObject.getString("latitude"));
-
+        recMap.put("customerLat", jsonObject.getDouble("customerLat"));
+        recMap.put("customerLong", jsonObject.getDouble("customerLong"));
+        recMap.put("branchLat", jsonObject.getDouble("branchLat"));
+        recMap.put("branchLong", jsonObject.getDouble("branchLong"));
         return recMap;
     }
 

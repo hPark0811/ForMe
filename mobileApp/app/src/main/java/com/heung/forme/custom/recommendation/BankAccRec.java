@@ -13,7 +13,7 @@ public class BankAccRec implements Recommendation {
     public BankAccRec(String type){
         description = new ArrayList<>();
         switch (type){
-            case "chequing":
+            case "chequeing_account":
                 this.type = "TD Unlimited Chequing Account";
                 drawableImage = R.drawable.unlimited_chequing_acc;
                 description.add("Peace of mind that comes with unlimited transactions");
@@ -22,7 +22,7 @@ public class BankAccRec implements Recommendation {
                 description.add("Free  Interac e-Transfer® transactions");
                 description.add("$15.95 Monthly Fee");
                 break;
-            case "Savings":
+            case "saving_account":
                 this.type = "TD Everyday Savings Account Card";
                 drawableImage = R.drawable.everyday_savings_acc;
                 description.add("Ideal if you’re starting to save or want frequent access to your funds");
@@ -31,7 +31,13 @@ public class BankAccRec implements Recommendation {
                 description.add("1 transaction1 per month");
                 break;
             default:
-                description.add("default");
+                this.type = "TD Unlimited Chequing Account";
+                drawableImage = R.drawable.unlimited_chequing_acc;
+                description.add("Peace of mind that comes with unlimited transactions");
+                description.add("Unlimited transactions");
+                description.add("No TD fee on any ATM in Canada");
+                description.add("Free  Interac e-Transfer® transactions");
+                description.add("$15.95 Monthly Fee");
                 break;
         }
     }
