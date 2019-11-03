@@ -10,19 +10,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.heung.forme.custom.recommendation.Login;
-import com.heung.forme.ui.main.SectionsPagerAdapter;
 
-import java.util.concurrent.TimeUnit;
-
-import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -37,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         String pw = String.valueOf(((EditText) findViewById(R.id.password)).getText());
 
         if (Login.checkLogin(username, pw)){
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.map_main);
+            /*setContentView(R.layout.activity_main);
             findViewById(R.id.view_pager).setAlpha(0f);
             newSingleThreadScheduledExecutor().schedule(task, 3, TimeUnit.SECONDS);
             SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(Login.getUserID(username), getSupportFragmentManager());
@@ -49,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
             FloatingActionButton fab = findViewById(R.id.fab);
             fab.setOnClickListener(view1 -> Snackbar.make(view1, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
-            );
+            );*/
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
 
         } else {
             Context context = getApplicationContext();
@@ -70,5 +71,22 @@ public class MainActivity extends AppCompatActivity {
         Uri uri = Uri.parse("https://www.td.com/ca/en/personal-banking/products/credit-cards/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
+    }
+
+    GoogleMap mMap;
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney, Australia, and move the camera.
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
