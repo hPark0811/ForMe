@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         String pw = String.valueOf(((EditText) findViewById(R.id.password)).getText());
 
         if (Login.checkLogin(username, pw)){
-            setContentView(R.layout.activity_main);
-            findViewById(R.id.view_pager).setAlpha(0f);
+            setContentView(R.layout.map_main);
+            /*findViewById(R.id.view_pager).setAlpha(0f);
             newSingleThreadScheduledExecutor().schedule(task, 3, TimeUnit.SECONDS);
             SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(Login.getUserID(username), getSupportFragmentManager());
             ViewPager viewPager = findViewById(R.id.view_pager);
             viewPager.setAdapter(sectionsPagerAdapter);
             TabLayout tabLayout = findViewById(R.id.tabDots);
-            tabLayout.setupWithViewPager(viewPager, true);
+            tabLayout.setupWithViewPager(viewPager, true);*/
         } else {
             Context context = getApplicationContext();
             CharSequence text = "Invalid Login!";
